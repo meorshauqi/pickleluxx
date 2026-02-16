@@ -57,6 +57,8 @@
 ## 🚀 DEPLOYMENT STEPS
 
 ### Option 1: Vercel (Recommended - Easiest)
+**Config Needed:** ✅ None (auto-configured)
+
 1. Push code to GitHub
 2. Sign up at vercel.com
 3. Import your GitHub repository
@@ -65,6 +67,8 @@
 6. Add custom domain
 
 ### Option 2: Netlify
+**Config Needed:** ✅ `public/_redirects` (already created)
+
 1. Push code to GitHub
 2. Sign up at netlify.com
 3. Connect repository
@@ -73,12 +77,62 @@
    - Publish directory: `dist`
 5. Deploy!
 
-### Option 3: AWS/DigitalOcean
+### Option 3: Apache Server (Shared Hosting/cPanel)
+**Config Needed:** ✅ `public/.htaccess` (already created)
+
+1. Build: `npm run build`
+2. Upload contents of `dist/` folder via FTP/File Manager
+3. `.htaccess` file handles routing and caching automatically
+4. Set up SSL certificate in cPanel
+5. Point domain to public_html directory
+
+**Common Apache Hosts:**
+- Hostinger
+- Bluehost
+- GoDaddy
+- SiteGround
+- cPanel hosting
+
+### Option 4: Nginx Server
+**Config Needed:** ⚠️ Nginx config (see below)
+
 1. Build: `npm run build`
 2. Upload `dist/` folder to server
-3. Configure nginx/apache
-4. Set up SSL certificate
-5. Point domain
+3. Configure Nginx (add server block config)
+4. Set up SSL certificate (Let's Encrypt)
+5. Restart Nginx
+
+**Nginx Configuration:**
+```nginx
+server {
+    listen 80;
+    server_name yourdomain.com;
+    root /var/www/pickleluxx/dist;
+    index index.html;
+
+    # SPA routing
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static assets
+    location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Gzip compression
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml text/javascript;
+}
+```
+
+### Option 5: AWS S3 + CloudFront
+1. Build: `npm run build`
+2. Upload to S3 bucket
+3. Enable static website hosting
+4. Set up CloudFront distribution
+5. Configure routing for SPA
 
 ---
 
