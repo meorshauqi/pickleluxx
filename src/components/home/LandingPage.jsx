@@ -65,6 +65,7 @@ const LandingPage = () => {
           visibility: hidden;
           transform: translateY(30px) scale(0.8);
           backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
         }
         .scroll-to-top::before {
           content: '';
@@ -139,7 +140,9 @@ const LandingPage = () => {
           .section-padding { padding: 3rem 1.5rem !important; }
           .info-title { font-size: 1rem !important; }
           .court-price-title { font-size: 1.8rem !important; }
-          .court-type-title { font-size: 1.3rem !important; }
+          .court-type-title { font-size: 1.2rem !important; }
+          .location-title { font-size: 1.5rem !important; }
+          .coming-soon-text { font-size: 1.3rem !important; }
           .scroll-to-top {
             width: 55px !important;
             height: 55px !important;
@@ -582,11 +585,24 @@ const LandingPage = () => {
             COURT PRICE
           </h2>
 
-          {/* ALL DAY */}
+          {/* JANDA BAIK Section */}
           <div style={{ width: '100%' }}>
-            <h3 className="court-type-title" style={{
+            <h3 className="location-title" style={{
+              color: '#D1C4B0',
+              fontSize: '2rem',
+              fontWeight: '600',
+              margin: '0 0 1.5rem 0',
+              textTransform: 'uppercase',
+              textAlign: 'left',
+              fontFamily: "'Montserrat', sans-serif",
+              letterSpacing: '0.1em'
+            }}>
+              JANDA BAIK
+            </h3>
+            
+            <h4 className="court-type-title" style={{
               color: '#A37A00',
-              fontSize: '1.8rem',
+              fontSize: '1.5rem',
               fontWeight: '600',
               margin: '0 0 2rem 0',
               textTransform: 'uppercase',
@@ -595,7 +611,7 @@ const LandingPage = () => {
               letterSpacing: '0.08em'
             }}>
               ALL DAY
-            </h3>
+            </h4>
             
             {/* Morning Slot */}
             <div style={{ 
@@ -676,6 +692,35 @@ const LandingPage = () => {
                 RM 70.00
               </span>
             </div>
+          </div>
+
+          {/* TIME SQUARE Section */}
+          <div style={{ width: '100%', marginTop: '2rem' }}>
+            <h3 className="location-title" style={{
+              color: '#D1C4B0',
+              fontSize: '2rem',
+              fontWeight: '600',
+              margin: '0 0 1.5rem 0',
+              textTransform: 'uppercase',
+              textAlign: 'left',
+              fontFamily: "'Montserrat', sans-serif",
+              letterSpacing: '0.1em'
+            }}>
+              TIME SQUARE
+            </h3>
+            
+            <p className="coming-soon-text" style={{
+              color: '#A37A00',
+              fontSize: '1.8rem',
+              fontWeight: '500',
+              margin: 0,
+              textAlign: 'left',
+              fontFamily: "'Montserrat', sans-serif",
+              fontStyle: 'italic',
+              letterSpacing: '0.05em'
+            }}>
+              Coming Soon
+            </p>
           </div>
         </div>
       </div>

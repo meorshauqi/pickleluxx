@@ -45,7 +45,7 @@ const Header = () => {
         @media (max-width: 768px) {
           .header-logo { height: 60px !important; }
           .header-logo-small { height: 55px !important; }
-          .logo-section div { margin-left: -40px !important; }
+          .logo-section a { margin-left: -40px !important; }
           
           .burger-icon {
             display: block;
@@ -118,7 +118,21 @@ const Header = () => {
       `}</style>
       {/* Logo Section */}
       <div className="logo-section" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: 0, paddingRight: 0, width: '100%', position: 'relative' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginLeft: '-80px' }}>
+        <a 
+          href="/" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '12px', 
+            marginLeft: '0px',
+            cursor: 'pointer',
+            textDecoration: 'none'
+          }}
+        >
           <img 
             src={lynxLogo} 
             alt="Lynx Logo" 
@@ -131,7 +145,7 @@ const Header = () => {
             className="header-logo-small"
             style={{ height: '90px', width: 'auto', objectFit: 'contain' }}
           />
-        </div>
+        </a>
         
         {/* Burger Icon */}
         <div 
