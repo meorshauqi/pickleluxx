@@ -111,78 +111,104 @@ const LandingPage = () => {
         }
 
         /* Slogan section */
+        @keyframes sloganShimmer {
+          0% { background-position: -250% center; }
+          100% { background-position: 250% center; }
+        }
         .slogan-section {
           width: 100%;
           background-color: #000000;
-          padding: 5rem 2rem;
+          padding: 9rem 2rem;
           margin: 0;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .slogan-card {
           position: relative;
-          max-width: 900px;
-          width: 100%;
-          padding: 2.75rem 3.5rem;
-          border-radius: 32px;
-          border: 1px solid rgba(209, 196, 176, 0.25);
-          background: radial-gradient(circle at top, rgba(209, 196, 176, 0.12) 0, rgba(0, 0, 0, 0.9) 55%);
-          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
           overflow: hidden;
         }
 
-        .slogan-card::before {
-          content: '';
+        .slogan-section::before {
+          content: 'L';
           position: absolute;
-          inset: 1px;
-          border-radius: 30px;
-          background: linear-gradient(135deg, rgba(163, 122, 0, 0.4), rgba(0, 0, 0, 0.4));
-          opacity: 0.4;
+          font-size: 55vw;
+          font-family: 'Times New Roman', serif;
+          font-weight: 700;
+          color: rgba(163, 122, 0, 0.03);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           pointer-events: none;
+          user-select: none;
+          line-height: 1;
         }
 
         .slogan-inner {
           position: relative;
           z-index: 1;
           text-align: center;
+          max-width: 960px;
+          width: 100%;
+        }
+
+        .slogan-eyebrow {
+          color: #A37A00;
+          font-size: 1rem;
+          font-weight: 500;
+          letter-spacing: 0.45em;
+          text-transform: uppercase;
+          font-family: 'Montserrat', sans-serif;
+          margin: 0 0 2.5rem 0;
         }
 
         .slogan-tagline {
-          color: #D1C4B0;
-          font-size: 2.4rem;
-          font-weight: 600;
-          margin: 0 0 1.25rem 0;
+          font-size: clamp(2.6rem, 5.5vw, 5rem);
+          font-weight: 300;
+          margin: 0 0 2.5rem 0;
           text-transform: uppercase;
-          letter-spacing: 0.16em;
-          font-family: 'Montserrat', sans-serif;
-        }
-
-        .slogan-underline {
-          width: 120px;
-          height: 2px;
-          margin: 0 auto 1.75rem auto;
-          background: linear-gradient(90deg, transparent, #D1C4B0, transparent);
+          letter-spacing: 0.22em;
+          font-family: 'Times New Roman', serif;
+          background: linear-gradient(
+            90deg,
+            #6B5000 0%,
+            #A37A00 20%,
+            #D4A200 45%,
+            #F0C040 50%,
+            #D4A200 55%,
+            #A37A00 80%,
+            #6B5000 100%
+          );
+          background-size: 250% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: sloganShimmer 4s linear infinite;
         }
 
         .slogan-lines {
           display: flex;
-          flex-direction: column;
-          gap: 0.45rem;
-          color: #A37A00;
-          font-size: 1.1rem;
-          line-height: 1.8;
-          font-family: 'Montserrat', sans-serif;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1.5rem;
         }
 
         .slogan-line {
           margin: 0;
+          display: flex;
+          align-items: center;
         }
 
         .slogan-line span {
-          opacity: 0.9;
+          color: #A37A00;
+          font-size: 1.2rem;
+          font-weight: 300;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          font-family: 'Montserrat', sans-serif;
+          font-style: italic;
+          padding: 0 2.2rem;
         }
+
 
         @media (max-width: 768px) {
           .first-hero-section {
@@ -498,23 +524,13 @@ const LandingPage = () => {
 
       {/* Slogan Section */}
       <div className="slogan-section">
-        <div className="slogan-card">
-          <div className="slogan-inner">
-            <h2 className="slogan-tagline">
-              Luxury Performance
-            </h2>
-            <div className="slogan-underline" />
-            <div className="slogan-lines">
-              <p className="slogan-line">
-                <span>- dink with grace</span>
-              </p>
-              <p className="slogan-line">
-                <span>- drop like a star</span>
-              </p>
-              <p className="slogan-line">
-                <span>- driver with mastery</span>
-              </p>
-            </div>
+        <div className="slogan-inner">
+          <p className="slogan-eyebrow">The Pickleluxx Experience</p>
+          <h2 className="slogan-tagline">Luxury Performance</h2>
+          <div className="slogan-lines">
+            <p className="slogan-line"><span>dink with grace</span></p>
+            <p className="slogan-line"><span>drop like a star</span></p>
+            <p className="slogan-line"><span>drive with mastery</span></p>
           </div>
         </div>
       </div>
