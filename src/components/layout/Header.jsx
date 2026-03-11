@@ -41,6 +41,42 @@ const Header = () => {
         .mobile-menu {
           display: none;
         }
+
+        .products-nav {
+          position: relative;
+        }
+
+        .products-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #000000;
+          border: 1px solid #A37A00;
+          padding: 0.75rem 1.5rem;
+          display: none;
+          flex-direction: column;
+          gap: 0.4rem;
+          min-width: 220px;
+          z-index: 1002;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+
+        .products-dropdown a {
+          color: #8B6914;
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 0.95rem;
+          font-family: 'Montserrat', sans-serif;
+          white-space: nowrap;
+        }
+
+        .products-dropdown a:hover {
+          opacity: 0.8;
+        }
+
+        .products-nav:hover .products-dropdown {
+          display: flex;
+        }
         
         @media (max-width: 768px) {
           .header-logo { height: 60px !important; }
@@ -222,6 +258,30 @@ const Header = () => {
           >
             Services
           </a>
+          <div className="products-nav" style={{ marginRight: '2rem' }}>
+            <a 
+              href="#"
+              className="nav-link"
+              style={{ 
+                color: '#8B6914', 
+                textDecoration: 'none',
+                fontWeight: '500',
+                fontSize: '1rem',
+                fontFamily: "'Montserrat', sans-serif"
+              }}
+              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
+              onMouseLeave={(e) => e.target.style.opacity = '1'}
+            >
+              Products
+            </a>
+            <div className="products-dropdown">
+              <a href="#">Luxx Paddle</a>
+              <a href="#">Luxx Paddle Cover</a>
+              <a href="#">Luxx Balls</a>
+              <a href="#">Luxx Jersey</a>
+              <a href="#">Luxx Top</a>
+            </div>
+          </div>
           <a 
             href="#price" 
             className="nav-link"
@@ -307,6 +367,95 @@ const Header = () => {
           }}
         >
           Services
+        </a>
+        <a 
+          href="#"
+          className="mobile-nav-link"
+          onClick={closeMenu}
+          style={{ 
+            color: '#A37A00', 
+            textDecoration: 'none',
+            fontWeight: '500',
+            fontSize: '1.2rem',
+            fontFamily: "'Montserrat', sans-serif"
+          }}
+        >
+          Products
+        </a>
+        <a 
+          href="#"
+          className="mobile-nav-link"
+          onClick={closeMenu}
+          style={{ 
+            color: '#A37A00', 
+            textDecoration: 'none',
+            fontWeight: '400',
+            fontSize: '1.1rem',
+            fontFamily: "'Montserrat', sans-serif",
+            paddingLeft: '1rem'
+          }}
+        >
+          Luxx Paddle
+        </a>
+        <a 
+          href="#"
+          className="mobile-nav-link"
+          onClick={closeMenu}
+          style={{ 
+            color: '#A37A00', 
+            textDecoration: 'none',
+            fontWeight: '400',
+            fontSize: '1.1rem',
+            fontFamily: "'Montserrat', sans-serif",
+            paddingLeft: '1rem'
+          }}
+        >
+          Luxx Paddle Cover
+        </a>
+        <a 
+          href="#"
+          className="mobile-nav-link"
+          onClick={closeMenu}
+          style={{ 
+            color: '#A37A00', 
+            textDecoration: 'none',
+            fontWeight: '400',
+            fontSize: '1.1rem',
+            fontFamily: "'Montserrat', sans-serif",
+            paddingLeft: '1rem'
+          }}
+        >
+          Luxx Balls
+        </a>
+        <a 
+          href="#"
+          className="mobile-nav-link"
+          onClick={closeMenu}
+          style={{ 
+            color: '#A37A00', 
+            textDecoration: 'none',
+            fontWeight: '400',
+            fontSize: '1.1rem',
+            fontFamily: "'Montserrat', sans-serif",
+            paddingLeft: '1rem'
+          }}
+        >
+          Luxx Jersey
+        </a>
+        <a 
+          href="#"
+          className="mobile-nav-link"
+          onClick={closeMenu}
+          style={{ 
+            color: '#A37A00', 
+            textDecoration: 'none',
+            fontWeight: '400',
+            fontSize: '1.1rem',
+            fontFamily: "'Montserrat', sans-serif",
+            paddingLeft: '1rem'
+          }}
+        >
+          Luxx Top
         </a>
         <a 
           href="#price" 

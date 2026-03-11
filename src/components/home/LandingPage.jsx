@@ -109,6 +109,81 @@ const LandingPage = () => {
         .scroll-to-top:active {
           transform: translateY(-4px) scale(0.98);
         }
+
+        /* Slogan section */
+        .slogan-section {
+          width: 100%;
+          background-color: #000000;
+          padding: 5rem 2rem;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .slogan-card {
+          position: relative;
+          max-width: 900px;
+          width: 100%;
+          padding: 2.75rem 3.5rem;
+          border-radius: 32px;
+          border: 1px solid rgba(209, 196, 176, 0.25);
+          background: radial-gradient(circle at top, rgba(209, 196, 176, 0.12) 0, rgba(0, 0, 0, 0.9) 55%);
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+          overflow: hidden;
+        }
+
+        .slogan-card::before {
+          content: '';
+          position: absolute;
+          inset: 1px;
+          border-radius: 30px;
+          background: linear-gradient(135deg, rgba(163, 122, 0, 0.4), rgba(0, 0, 0, 0.4));
+          opacity: 0.4;
+          pointer-events: none;
+        }
+
+        .slogan-inner {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+        }
+
+        .slogan-tagline {
+          color: #D1C4B0;
+          font-size: 2.4rem;
+          font-weight: 600;
+          margin: 0 0 1.25rem 0;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .slogan-underline {
+          width: 120px;
+          height: 2px;
+          margin: 0 auto 1.75rem auto;
+          background: linear-gradient(90deg, transparent, #D1C4B0, transparent);
+        }
+
+        .slogan-lines {
+          display: flex;
+          flex-direction: column;
+          gap: 0.45rem;
+          color: #A37A00;
+          font-size: 1.1rem;
+          line-height: 1.8;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .slogan-line {
+          margin: 0;
+        }
+
+        .slogan-line span {
+          opacity: 0.9;
+        }
+
         @media (max-width: 768px) {
           .first-hero-section {
             margin-top: 100px;
@@ -232,7 +307,7 @@ const LandingPage = () => {
 
         {/* BOOK A COURT Button */}
         <a 
-          href="https://deeplink.afa-sports.com/Complex/474"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: 'none' }}
@@ -254,7 +329,7 @@ const LandingPage = () => {
             onMouseEnter={(e) => e.target.style.opacity = '0.9'}
             onMouseLeave={(e) => e.target.style.opacity = '1'}
           >
-            BOOK A COURT
+            COMING SOON
           </button>
         </a>
       </div>
@@ -406,7 +481,7 @@ const LandingPage = () => {
         }}>
           <ServiceCard title="MEMBERSHIP" image={membershipImg} buttonText="COMING SOON" />
           <ServiceCard title="EVENTS" image={eventsImg} buttonText="COMING SOON" />
-          <ServiceCard title="PADEL COACH" image={coachImg} buttonText="COMING SOON" />
+          <ServiceCard title="PICKEL BALL" image={coachImg} buttonText="COMING SOON" />
         </div>
 
         {/* Bottom Row - 2 Columns */}
@@ -416,8 +491,31 @@ const LandingPage = () => {
           gap: '10px',
           padding: '0'
         }}>
-          <ServiceCard title="PADEL LEAGUE" image={leagueImg} buttonText="COMING SOON" />
+          <ServiceCard title="PICKEL BALL" image={leagueImg} buttonText="COMING SOON" />
           <ServiceCard title="SPONSORSHIP" image={sponsorshipImg} buttonText="COMING SOON" />
+        </div>
+      </div>
+
+      {/* Slogan Section */}
+      <div className="slogan-section">
+        <div className="slogan-card">
+          <div className="slogan-inner">
+            <h2 className="slogan-tagline">
+              Luxury Performance
+            </h2>
+            <div className="slogan-underline" />
+            <div className="slogan-lines">
+              <p className="slogan-line">
+                <span>- dink with grace</span>
+              </p>
+              <p className="slogan-line">
+                <span>- drop like a star</span>
+              </p>
+              <p className="slogan-line">
+                <span>- driver with mastery</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
