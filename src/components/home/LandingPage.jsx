@@ -127,20 +127,6 @@ const LandingPage = () => {
           overflow: hidden;
         }
 
-        .slogan-section::before {
-          content: 'L';
-          position: absolute;
-          font-size: 55vw;
-          font-family: 'Times New Roman', serif;
-          font-weight: 700;
-          color: rgba(163, 122, 0, 0.03);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          pointer-events: none;
-          user-select: none;
-          line-height: 1;
-        }
 
         .slogan-inner {
           position: relative;
@@ -231,6 +217,9 @@ const LandingPage = () => {
             padding-right: 1rem !important;
           }
           .hero-button { padding: 0.8rem 2rem !important; font-size: 0.9rem !important; }
+          .slogan-tagline { font-size: 2rem !important; letter-spacing: 0.1em !important; }
+          .slogan-lines { flex-direction: column !important; gap: 0.8rem !important; }
+          .slogan-line span { padding: 0 !important; font-size: 1rem !important; letter-spacing: 0.2em !important; }
           .services-grid-3 { grid-template-columns: 1fr !important; }
           .services-grid-2 { grid-template-columns: 1fr !important; }
           .split-section { flex-direction: column !important; gap: 0 !important; padding-top: 0 !important; }
@@ -507,7 +496,7 @@ const LandingPage = () => {
         }}>
           <ServiceCard title="MEMBERSHIP" image={membershipImg} buttonText="COMING SOON" />
           <ServiceCard title="EVENTS" image={eventsImg} buttonText="COMING SOON" />
-          <ServiceCard title="PICKEL BALL" image={coachImg} buttonText="COMING SOON" />
+          <ServiceCard title="LUXX PICKLEBALL LEAGUE" image={coachImg} buttonText="COMING SOON" />
         </div>
 
         {/* Bottom Row - 2 Columns */}
@@ -517,7 +506,7 @@ const LandingPage = () => {
           gap: '10px',
           padding: '0'
         }}>
-          <ServiceCard title="PICKEL BALL" image={leagueImg} buttonText="COMING SOON" />
+          <ServiceCard title="LUXX PICKLEBALL ACADEMY" image={leagueImg} buttonText="COMING SOON" />
           <ServiceCard title="SPONSORSHIP" image={sponsorshipImg} buttonText="COMING SOON" />
         </div>
       </div>
